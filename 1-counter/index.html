@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+        integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+    <div class="container">
+        <div class="counter-div">
+            <h1>Counter App</h1>
+            <span class="count">0</span>
+            <hr>
+            <div class="buttons">
+                <button class="subtract">
+                    <i class="fas fa-arrow-down"></i>
+                    Subtract
+                </button>
+                <button class="reset">
+                    <i class="fas fa-spinner"></i>
+                    Reset
+                </button>
+                <button class="add">
+                    <i class="fas fa-arrow-up"></i>
+                    Add
+                </button>
+
+            </div>
+        </div>
+
+    </div>
+    <script>
+        const count = document.querySelector(".count");
+        const addCount = document.querySelector(".add");
+        const subtractCount = document.querySelector('.subtract');
+        const resetCount = document.querySelector('.reset');
+        const buttons = document.querySelector(".buttons")
+        buttons.addEventListener("click", (e) => {
+            if (e.target.classList.contains("add")) {
+                count.innerHTML++;
+                setColor();
+            }
+            else if (e.target.classList.contains("subtract")) {
+                count.innerHTML--;
+                setColor();
+            }
+            else {
+                count.innerHTML = 0;
+                setColor();
+            }
+        })
+
+        // addCount.addEventListener("click", () => {
+        //     count.innerHTML++;
+        //     setColor();
+        // });
+
+        // subtractCount.addEventListener("click", () => {
+        //     count.innerHTML--;
+        //     setColor();
+        // })
+
+        // resetCount.addEventListener("click", () => {
+        //     count.innerHTML = 0;
+        //     setColor();
+        // })
+        function setColor() {
+            if (count.innerHTML > 0) {
+                count.style.color = "yellow"
+            }
+            else if (count.innerHTML < 0) {
+                count.style.color = "red"
+            }
+            else {
+                count.style.color = 'white'
+            }
+
+        }
+    </script>
+
+</body>
+
+</html>
